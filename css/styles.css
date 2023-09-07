@@ -1,0 +1,36 @@
+.enlace {
+    color: #053B50 !important;
+    text-decoration: none;
+}
+
+.enlace:hover {
+    cursor: pointer;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.centrar-contenido-div {
+    justify-content: center;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.readonly {
+    border-radius: 50%;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.italic {
+    font-style: italic;
+}
