@@ -34,3 +34,8 @@
 .italic {
     font-style: italic;
 }
+
+.img-book {
+    max-height:180px;
+    width: auto !important;
+}
