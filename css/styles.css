@@ -38,4 +38,5 @@
 .img-book {
     max-height:180px;
     width: auto !important;
+    border-radius: 5px;
 }
