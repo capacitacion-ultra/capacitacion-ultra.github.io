@@ -1,6 +1,8 @@
 # Proceso de trabajo
 
-Para la realización de cualquier actividad relacionada con el desarrollo o mantenimiento de una pieza de software, en totalmente indispensable que se sigan los lineamientos siguientes:
+En la actualidad hay una gran variedad de marcos o frameworks de trabajo que nos ayudan a ordenar la forma en la que realizamos actividades para alcanzar un objetivo, desarrollar un sitema nuevo o mantener uno ya existente. Ejemplos de este tipo de guias son Sctum, SaFE, RUP, Extreme programming, etc.
+
+Al interior de nuestra organización, para la realización de cualquier actividad relacionada con el desarrollo o mantenimiento de una pieza de software, en indispensable apegarse a los siguientes lineamientos que están inspirados en propuestas que provienen de fuentes diversas y en algunos casos, son originales:
 
 ## Sección I
 
