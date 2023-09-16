@@ -2,6 +2,8 @@
 
 Para la realización de cualquier actividad relacionada con el desarrollo o mantenimiento de una pieza de software, en totalmente indispensable que se sigan los lineamientos siguientes:
 
+## Sección I
+
 Todo requerimiento debe ser solicitado a travéz de un simple formato llamado "Orden de trabajo" (en lo sucesivo ODT) que contenga la información siguiente:
 
 1. ID
@@ -14,12 +16,74 @@ Todo requerimiento debe ser solicitado a travéz de un simple formato llamado "O
 8. Requerimientos que dependen de este
 9. Complejidad del requerimiento en una métrica relativa (como Story points, o cosmi points, por ejemplo)
 10. Lista de criterios de aaceptación
-11. Estatus de atención (enviado, aceptado, rechazado, en progreso, en revisión, terminado, abortado)
-12. Personal asignado y fecha de asignación (si aplica)
+11. Estatus de atención "enviado" inicialmente y posteriormente: aceptado, rechazado, en progreso, en revisión, terminado, o abortado
+12. Responsable asignado y fecha de asignación (si aplica)
+13. Ciclo de aceptación (este dato se registra posteriormente)
 
 Cada ODT será colocada en un repositorio (tipo stack, o pila) global al proyecto llamado ```Repositorio Global de Ordenes de Trabajo``` que en lo sucesivo llamaremos ```ReGOT``` y puede ser elaborada por cualquier rol involucrado en el proyecto.
 
-Cada inicio de un nuevo ciclo, el ```ReGOT``` es revisado y **priorizado** para colocar las ODT's mas importantes (o en su caso, mas urgentes) en el "top" de la pila del ```ReGOT```.
+Cada inicio de un nuevo ciclo, el ```ReGOT``` es revisado por el equipo y por un representante del negocio. A continuación, es **priorizado** (o reorganizado) para colocar las ODT's mas importantes (o en su caso, mas urgentes) en el "top" del ```ReGOT```. De esta manera, aseguramos que al inicio de cada ciclo tendremos un ```ReGOT``` priorizado cuyos prmeros elementos son especialmente relevantes ya sea por su importancia o or su urgecia a criterio del equipo de trabajo.
 
-Listo
+Los elementos en el ```ReGOT``` serán permanentes y no habrá manera de removerlos durante el ciclo de vida del proyecto. Sólo pueden ser editados para modificar su estatus o incluír un mayor claridad en su descripción o en su detalles.
+
+# Sección II
+
+En cada inicio de ciclo, el equipo tomará del ```ReGOT``` las ODT's que en conjunto determinen que pueden ser realizadas en el tiempo destinado a la duración del ciclo y (1) se cambiará su estatus a **aceptado** y (2) se registrará el ciclo en el que fue aceptado. 
+
+Adicionalmente, si no se ha elegido a un responsable de manera previa, se procede a elegir uno en acuerdo con el equipo y considerando (a) las capacidades técnicas y (b) la carga de trabajo de cada miembro. Finalmente, se deberá registrar al responsable en el formato de ODT.
+
+Las ODT's en el ```ReGOT``` cuyo estatus es "aceptado" para el ciclo N, representan el Repositorio Órdenes de Trabajo para el Ciclo N, que en lo sucesivo denominaremos como ```ReCOT``` para el ciclo N.
+
+# Sección III
+
+Una vez que se realizó el compromiso de entrega de las actividades del ```ReCOT```, en un ciclo dado, cada responsable deberá:
+1. Crear una rama derivada de la rama de desarrollo
+2. Clonar la rama creada en su entorno local de desarrollo
+3. Producir la pieza de software
+4. Generar el conjunto de pruebas unitarias con la cobertura acordada (alineados a RIICAAA)
+5. Realizar, de manera ordenada y sistemática, commits de unidades completas de trabajo
+6. Verificar el cumplimiento del DoD
+7. Solicitar un PR (un PR es una revisión por uno o varios miembros del equipo del trabajo realizado por otro miembro, con sugerencias de cambio o mejora que se da en una secuencia de interacciones hasta que se agotan las observaciones de los revisores)
+8. Atender a las observaciones del PR y buscar la aceptación de las mismas
+9. Unir su rama de trabajo con la rama de desarrollo
+10. Destruir la rama de trabajo
+11. Cambiar el estatus de la ODT a "terminado" 
+
+Lo anterior aplica para cada uno de los responsables y las actividades en el ```ReCOT``` hasta cumplir cada compromiso en El.
+
+# Sección IV
+
+El DoD es un documento que especifica cuáles son las actividades **adicionales** a la generación del producto, pruebas unitarias, y cobertura que deben ser realizadas para que un desarrollador esté en posibilidades de enviar a su equipo un PR. A continuación se presenta una sugerencia de DoD que generalmente es empleada por múltiples equipos de desarrollo:
+
+1. Apego a estándares de codificación (en el lenguaje, en la base de datos, en los scripts de SO, etc)
+2. Acoplameinto y cohesión (y aqui, de ser posible, complejidad ciclomática)
+3. Code smells (mala indentación, uso indebido de asignaciones y valores boleanos, exceso de parámetros, uso indebido de excepciones, etc)
+4. Pruebas de seguridad (inyección de sql, buffer overflow, cross site scripting, information disclosure, encrpción adecuada, digestión adecuada, validadores coherentes y congruentes, canal seguro, fortalez de contraseñas, etc)
+5. Registro frecuente de operaciones en el log de trasacciones
+6. Inclusión de documentación de diversos tipos (javadoc, doble barra, barra estrella)
+7. Congruencia en el uso del lenguaje nativo (No caer en el error de hacer variables en español y métodos en inglés)
+
+Muchos de los puntos anteriores se pueden verificar de manera automática emplendo software gratuito, como Sonar Lint, por ejemplo. Durante una revisión manual (como ocurre en un PR) tambén se dedica esfuerzo a validar este tipo de aspectos, pero el foco de un PR revisa principalmente la lógica de negocio y el apego a la arquietctra base y al diseño de la solución a la ODT trabajada.
+
+Incumplir con los DoD genera dos grandes problemas:
+1. Deuda técnica
+2. Baja calidad en el producto de software
+
+> Es interesante mencionar que el incumplimientod del DoD refleja una baja calidad en el proceso de Software y, consecuentemente, ello provoca una baja calidad en el producto de software.
+
+# Sección V
+
+Con las medidas anteriores, se puede asegurar que la calidad del producto de software será **mayor** que la que se tendría si no se llevaran a cabo; sin embargo, no es posible proporcionar un indicador de cuánto mejor. Evidentemente, porcentages mayores de cobertura o una cercanía del 100% al indicadorde "apego a estándares" hacen suponer una calidad superior, pero aun alcanzando altos niveles en los indicadores de las prácticas anteriores (que representaría un costo económico muy alto, para el proceso de desarrollo) no existe garantía de que el producto final esté libre de defectos.
+
+De lo anterior, se recomienda el siguienre perfil de calidad: 
+
+- Cobertura de pruebas unitarias: 70% (y sólo para las clases de servicio)
+- Apego a estándares: 90%
+- Code smells: 
+
+
+Una forma de asegurar la calidad 
+
+
+
 
