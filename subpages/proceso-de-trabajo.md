@@ -53,6 +53,8 @@ Una vez que se realizó el compromiso de entrega de las actividades del ```ReCOT
 
 Lo anterior aplica para cada uno de los responsables y las actividades en el ```ReCOT``` hasta cumplir cada compromiso en El.
 
+> Nota: en el punto 5 de la lista anterior se dice textualmente lo siguiente: "Realizar, de manera ordenada y sistemática, commits de unidades completas de trabajo". Cuando nos referimos a "Unidades completas de trabajo", es como si habláramos de los párrafos de un capítulo de un libro. En nuestro caso, el libro es el proyecto, el capítulo es la ODT y el párrafo es "la parte completa" de código que ya está lista para ser considerara como "algo correcto" que forma parte de mi ODT. Cuando la ODT esté "completa", enviaremos el PR.
+
 # Sección IV
 
 El DoD es un documento que especifica cuáles son las actividades **adicionales** a la generación del producto, pruebas unitarias, y cobertura que deben ser realizadas para que un desarrollador esté en posibilidades de enviar a su equipo un PR. A continuación se presenta una sugerencia de DoD que generalmente es empleada por múltiples equipos de desarrollo:
