@@ -73,17 +73,45 @@ Incumplir con los DoD genera dos grandes problemas:
 
 # Sección V
 
-Con las medidas anteriores, se puede asegurar que la calidad del producto de software será **mayor** que la que se tendría si no se llevaran a cabo; sin embargo, no es posible proporcionar un indicador de cuánto mejor. Evidentemente, porcentages mayores de cobertura o una cercanía del 100% al indicadorde "apego a estándares" hacen suponer una calidad superior, pero aun alcanzando altos niveles en los indicadores de las prácticas anteriores (que representaría un costo económico muy alto, para el proceso de desarrollo) no existe garantía de que el producto final esté libre de defectos.
+Con las medidas anteriores, se puede asegurar que la calidad del producto de software será **mayor** que la que se tendría si no se llevaran a cabo; sin embargo, no es posible proporcionar un indicador de cuánto mejor. Evidentemente, porcentajes mayores de cobertura o una cercanía del 100% al indicadorde "apego a estándares" hacen suponer una calidad superior, pero aun alcanzando altos niveles en los indicadores de las prácticas anteriores (que representaría un costo económico muy alto, para el proceso de desarrollo) no existe garantía de que el producto final esté libre de defectos.
 
 De lo anterior, se recomienda el siguienre perfil de calidad: 
 
 - Cobertura de pruebas unitarias: 70% (y sólo para las clases de servicio)
 - Apego a estándares: 90%
-- Code smells: 
+- Code smells: 0% (para la totalidad del código)
+- Documentación equivalente a la de javadoc: 100% (para las interfases de servicio)
+- Documentación en línea (//) 20% de la totalidad de codido de las clases de servicio
+- Registro de operaciones relevantes en el log de trasacciones: mayor a 10 registros por cada 100 lineas de código
+- Revisión de elementos básicos de programación segura: 100%
 
+Finalmente, se recomienda a los revisores de los PR que se enfoquen en los siguientes detalles:
 
-Una forma de asegurar la calidad 
+- Diseño de la solución
+- Compatibilidad del diseño con la arquitectura base
+- Código malicioso
+- Portabilidad
+- Escalabilidad
+- Eficiencia de la solución
+- Implementación adecuada
 
+# Seccion VI
+
+Una vez que el incremento (o pieza de software) ha pasado por las fases de implementación (con DoD inclído) y por su correspondiente PR de manera exitosa, el código de la rama de trabajo se une con el de la rama de desarrollo y esto dispara, de manera automática el proceso de integración continua y, posteriormente, el de despliegue continuo, que en lo sucesivo nombraremos como CI/CD.
+
+El proceso de CI/CD es un proceso prácticamente sutomático que nos auyda a realizar ciertas actividades rutinarias y tediosas que son candidatos a ejecutar de manera robótica. La siguiente lista de actividades es un ejemplo común de estos procesos:
+
+- Obetener el código fuente de desarrollo
+- Compilar el código
+- Ejecutar pruebas unitarias de el código recien integrado MAS TODAS las otras pruebas unitarias que se ejecutaron en el pasado
+- Revisar que la cobertura de las pruebas recién integradas sea, cuando menos el 70% (del código de las clases de servicio)
+- Revisar apego a estándares de codificación
+- Revisar Code Smells
+- Calcular el % del registro al log de transacciones
+- Generar el paquete de distribución (en java es el jar, o el war, o el ear)
+- Crear el contenedor del paquete (generalmente es un contenedor docker)
+- Guardar el contenedor en el registro de contenedores (usando actualmente github packages)
+- Producir el evento de despliegue (ejecutar un pod en kubernetes o invocar un script en el embiente de despliegue)
 
 
 
