@@ -20,7 +20,9 @@ Todo requerimiento debe ser solicitado a través de un simple formato llamado "O
 12. Responsable asignado y fecha de asignación (si aplica)
 13. Ciclo de aceptación (este dato se registra posteriormente)
 
-Cada ODT será colocada en un repositorio (tipo stack, o pila) global al proyecto llamado ```Repositorio Global de Órdenes de Trabajo``` que en lo sucesivo llamaremos ```ReGOT``` y puede ser elaborada por cualquier rol involucrado en el proyecto.
+Cada ODT será colocada en un repositorio (tipo stack, o pila) global al proyecto llamado ```Repositorio Global de Órdenes de Trabajo``` que en lo sucesivo llamaremos ```ReGOT``` y puede ser elaborada por cualquier rol involucrado en el proyecto y en cualquier momento del proceso de desarrollo.
+
+> Eso no quiere decir que serán atendidas o procesadas en el instante en el que sean creadas. De hecho, como se verá próximamente, serán priorizadas y atendidas acorde a su importantcia y/o urgencia.
 
 Cada inicio de un nuevo ciclo, el ```ReGOT``` es revisado por el equipo y por un representante del negocio. A continuación, es **priorizado** (o reorganizado) para colocar las ODT's mas importantes (o en su caso, más urgentes) en el "top" del ```ReGOT```. De esta manera, aseguramos que al inicio de cada ciclo tendremos un ```ReGOT``` priorizado cuyos primeros elementos son especialmente relevantes ya sea por su importancia o por su urgencia a criterio del equipo de trabajo.
 
