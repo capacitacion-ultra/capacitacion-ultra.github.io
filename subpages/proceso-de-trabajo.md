@@ -64,7 +64,7 @@ El DoD es un documento que especifica cuáles son las actividades **adicionales*
 1. Apego a estándares de codificación (en el lenguaje, en la base de datos, en los scripts de SO, etc)
 2. Acoplamiento y cohesión (y aquí, de ser posible, complejidad ciclomática)
 3. Code smells (mala indentación, uso indebido de asignaciones y valores boleanos, exceso de parámetros, uso indebido de excepciones, etc)
-4. Pruebas de seguridad (inyección de sql, buffer overflow, cross site scripting, information disclosure, encrpción adecuada, digestión adecuada, validadores coherentes y congruentes, canal seguro, fortalez de contraseñas, etc)
+4. Pruebas de seguridad (inyección de sql, buffer overflow, cross site scripting, information disclosure, encrpción adecuada, digestión adecuada, validadores coherentes y congruentes, canal seguro, fortaleza de contraseñas, etc)
 5. Registro frecuente de operaciones en el log de transacciones
 6. Inclusión de documentación de diversos tipos (javadoc, doble barra, barra estrella)
 7. Congruencia en el uso del lenguaje nativo (No caer en el error de hacer variables en español y métodos en inglés)
